@@ -30,10 +30,14 @@ inputs:
     required: false
     default: ''
     description: 'Path to a Namespace.Class.StaticMethod to run to perform the build.'
+  GoogleCloudProjectId:
+    default: ''
+    required: false
+    description: 'Supply a Google cloud project id to create a Kubernetes cluster, the cluster will then be used to run the build.'
   kubeConfig:
     default: ''
     required: false
-    description: 'Supply a base64 encoded kubernetes config to run builds on kubernetes and stream logs until completion.'
+    description: 'Supply a base64 encoded Kubernetes config to run builds on Kubernetes and stream logs until completion.'
   kubeVolume:
     default: ''
     required: false

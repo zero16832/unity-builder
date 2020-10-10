@@ -49,6 +49,7 @@ class BuildParameters {
       kubeContainerCPU: Input.kubeContainerCPU,
       kubeVolumeSize: Input.kubeVolumeSize,
       kubeVolume: Input.kubeVolume,
+      googleCloudProjectId: Input.googleCloudProjectId,
     };
   }
 

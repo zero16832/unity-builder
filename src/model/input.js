@@ -85,6 +85,10 @@ class Input {
     return core.getInput('customParameters') || '';
   }
 
+  static get googleCloudProjectId() {
+    return core.getInput('GoogleCloudProjectId') || '';
+  }
+
   static get kubeConfig() {
     return core.getInput('kubeConfig') || '';
   }
