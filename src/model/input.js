@@ -86,7 +86,7 @@ class Input {
   }
 
   static get googleCloudProjectId() {
-    return core.getInput('GoogleCloudProjectId') || '';
+    return core.getInput('googleCloudProjectId') || '';
   }
 
   static get kubeConfig() {

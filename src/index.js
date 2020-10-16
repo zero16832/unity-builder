@@ -1,4 +1,13 @@
-import { Action, BuildParameters, Cache, Docker, ImageTag, Kubernetes, Output } from './model';
+import {
+  Action,
+  BuildParameters,
+  Cache,
+  Docker,
+  ImageTag,
+  Kubernetes,
+  Output,
+  GoogleKubernetesEngine,
+} from './model';
 
 const core = require('@actions/core');
 
@@ -10,9 +19,13 @@ async function action() {
 
   const buildParameters = await BuildParameters.create();
   const baseImage = new ImageTag(buildParameters);
-  // if (buildParameters.googleCloudProjectId){
-  //
-  // }
+
+  // If google cloud credentials are specified, do whatever is needed to get a kubernetes cluster ready to handle a build job
+  if (buildParameters.googleCloudProjectId) {
+    core.info('Setting up Kubernetes with google cloud');
+    GoogleKubernetesEngine.makeClusterAvailableForBuilds();
+  }
+
   if (buildParameters.kubeConfig) {
     core.info('Building with Kubernetes');
     await Kubernetes.runBuildJob(buildParameters, baseImage);

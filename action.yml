@@ -30,7 +30,7 @@ inputs:
     required: false
     default: ''
     description: 'Path to a Namespace.Class.StaticMethod to run to perform the build.'
-  GoogleCloudProjectId:
+  googleCloudProjectId:
     default: ''
     required: false
     description: 'Supply a Google cloud project id to create a Kubernetes cluster, the cluster will then be used to run the build.'
