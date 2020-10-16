@@ -111,6 +111,7 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           projectPath: test-project
           unityVersion: 2019.3.15f1
+          allowDirtyBuild: true
       - uses: frostebite/K8s-Download-Volume@master
         with:
           kubeConfig: ${{ steps.read-base64.outputs.base64 }}
