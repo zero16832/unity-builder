@@ -1,12 +1,12 @@
 import container from '@google-cloud/container';
 
 class GoogleKubernetesEngine {
-  static async makeClusterAvailableForBuilds() {
+  static async makeClusterAvailableForBuilds(buildParameters) {
     // Create the Cluster Manager Client
     const client = new container.v1.ClusterManagerClient();
 
     const zone = 'us-central1-a';
-    const projectId = await client.getProjectId();
+    const projectId = buildParameters.googleCloudProjectId;
 
     const request = {
       projectId,
