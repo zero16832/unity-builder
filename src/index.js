@@ -23,7 +23,7 @@ async function action() {
   // If google cloud credentials are specified, do whatever is needed to get a kubernetes cluster ready to handle a build job
   if (buildParameters.googleCloudProjectId) {
     core.info('Setting up Kubernetes with google cloud');
-    GoogleKubernetesEngine.makeClusterAvailableForBuilds();
+    await GoogleKubernetesEngine.makeClusterAvailableForBuilds();
   }
 
   if (buildParameters.kubeConfig) {
